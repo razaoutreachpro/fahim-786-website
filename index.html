@@ -1,1 +1,90 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOHAMMAD FAHIM SHAIKH - Overseas Employment Connector</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f2f2f2}
+header{background:#0a1e4e;color:#fff;padding:12px 16px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;max-width:1150px;margin:auto}
+.logo{display:flex;gap:10px;align-items:center}
+.logo-icon{font-size:38px;border:2px solid #e8b84b;border-radius:10px;padding:4px 8px}
+.logo b{font-size:20px;line-height:1.1}
+.logo span{font-size:10px;color:#e8b84b;letter-spacing:1px}
+nav{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+nav a{color:#fff;text-decoration:none;font-size:14px}
+.lang{text-align:right}
+.lang-btn{background:#102a5e;color:#fff;border:1px solid #2a4a8a;padding:8px 10px;border-radius:8px;cursor:pointer;font-size:13px}
+.lang-flags{display:flex;gap:12px;margin-top:8px;justify-content:flex-end}
+.lang-flags button{background:none;border:none;color:#fff;cursor:pointer;font-size:12px;text-align:center}
+.lang-flags span{font-size:22px;display:block}
+.hero{background:#0a1e4e;color:#fff;padding:30px 16px 60px}
+.hero-in{max-width:1150px;margin:auto;display:flex;gap:20px}
+.hero-left{flex:1.2}
+.hero-left h1{font-size:44px;line-height:1.05}
+.hero-left h2{color:#e8b84b;font-size:22px;margin:14px 0}
+.hero-left p{font-size:15px;line-height:1.6;color:#e8e8e8}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.btn{padding:13px 16px;border-radius:8px;text-decoration:none;font-weight:800;font-size:14px;border:none;cursor:pointer}
+.green{background:#22a35c;color:#fff}
+.white{background:#fff;color:#111}
+.goldb{background:#fff;color:#111;border:2px solid #e8b84b}
+.ai{background:#fff;color:#111;border-radius:14px;padding:16px;flex:1;height:fit-content}
+.ai-head{display:flex;gap:10px;align-items:center;justify-content:flex-end}
+.ai-msg{background:#f2f2f2;padding:12px;border-radius:10px;font-size:13px;line-height:1.6;margin:12px 0}
+.ai-input{display:flex;gap:8px}
+.ai-input input{flex:1;padding:11px;border:1px solid #ddd;border-radius:20px}
+.ai-input button{background:#1e90ff;color:#fff;border:none;width:38px;height:38px;border-radius:50%;cursor:pointer}
+.wrap{max-width:1150px;margin:auto;padding:20px 16px;display:flex;gap:20px}
+.card{background:#fff;border-radius:14px;padding:20px;flex:1;box-shadow:0 2px 10px #ddd}
+.card h3{font-size:26px;color:#0a1e4e}
+.card p{font-size:13px;color:#666;margin:6px 0 14px;line-height:1.7}
+input,select{width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:8px;font-size:14px}
+label{font-size:12px;font-weight:bold}
+.submit{background:#0a1e4e;color:#e8b84b;border:none;padding:14px;font-weight:900;border-radius:8px;width:100%;cursor:pointer}
+.submit2{background:#e8b84b;color:#111;border:none;padding:14px;font-weight:900;border-radius:8px;width:100%;cursor:pointer}
+.flags{font-size:26px;line-height:1.6}
+.flags small{font-size:12px;color:#333;display:block}
+.tag{border:1px solid #eee;padding:12px;border-radius:10px;margin-top:10px;font-size:12px;line-height:1.5}
+.three{display:flex;gap:10px;margin-top:12px}
+.three div{flex:1}
+footer{background:#0a1e4e;color:#fff;padding:16px;font-size:12px}
+footer div{max-width:1150px;margin:auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.rtl{direction:rtl;text-align:right}
+@media(max-width:800px){.hero-in,.wrap{flex-direction:column}.hero-left h1{font-size:34px}.three{flex-direction:column} nav{display:none}}
+</style>
+</head>
+<body id="body">
+<header><div class="top">
+<div class="logo"><div class="logo-icon">⚓</div><div><b>MOHAMMAD<br>FAHIM SHAIKH</b><br><span>FROM PAKISTAN TO THE WORLD<br>LICENSED • TRUSTED • GLOBAL</span></div></div>
+<div><nav><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#countries">Countries</a><a href="#apply">Apply Now</a><a href="#demand">Company Demand</a><a href="#contact">Contact</a></nav>
+<div class="lang"><button class="lang-btn" onclick="setLang('en')">🌐 Language: <span id="langLabel">English (UK)</span></button>
+<div class="lang-flags"><button onclick="setLang('en')"><span>🇬🇧</span>English (UK)</button><button onclick="setLang('ar')"><span>🇸🇦</span>Arabic</button><button onclick="setLang('ru')"><span>🇷🇺</span>Russian</button><button onclick="setLang('ur')"><span>🇵🇰</span>Urdu</button></div></div></div>
+</div></header>
+<div class="hero" id="home"><div class="hero-in"><div class="hero-left">
+<h1 data-i18n="heroTitle">Overseas Employment Connector</h1>
+<h2 data-i18n="heroSub">Connecting Pakistan Workforce to Gulf & Europe</h2>
+<p data-i18n="heroDesc">Licensed recruitment partner helping skilled and professional Pakistani talent secure verified overseas jobs in the Gulf and Europe. End-to-end support — documentation, visas, placement, and onboarding.</p>
+<div class="btns"><a class="btn green" href="https://wa.me/923153673539">💬 <span data-i18n="whatsapp">CHAT ON WHATSAPP</span></a><a class="btn white" href="tel:+923153673539">📞 <span data-i18n="call">CALL NOW</span></a><a class="btn goldb" href="mailto:contact@mohammadfahimshaikh.com">✉️ <span data-i18n="email">EMAIL US</span></a></div></div>
+<div class="ai"><div class="ai-head"><div style="text-align:left"><b>Meta AI</b><small>Online | Ready to assist</small></div><div style="font-size:28px">♾️</div></div><div class="ai-msg" id="aiMsg">Hi! I can help you apply or list a company demand. Ask me about jobs, documents, or process.</div><div class="ai-input"><input id="aiInput" placeholder="Ask about jobs, visas, requirements..."><button onclick="askAI()">🎤</button></div></div></div></div>
+<div class="wrap" id="apply"><div class="card"><h3 data-i18n="apply">Apply Now</h3><p data-i18n="applySub">Job seekers - apply for overseas opportunities</p><label>Full Name</label><input id="aName" placeholder="e.g. Ahmad Khan"><label>Phone / WhatsApp</label><input id="aPhone" placeholder="+92 3xx xxx xxxx"><label>Country</label><select id="aCountry"><option>UAE</option><option>Saudi Arabia</option><option>Qatar</option><option>Oman</option><option>Azerbaijan</option><option>Russia</option><option>Malta</option></select><label>Profession / Skill</label><input id="aSkill" placeholder="e.g. Electrician, Nurse, Driver"><label>Experience</label><input id="aExp" placeholder="e.g. 3 years in construction"><button class="submit" onclick="sendApply()" data-i18n="submitApp">SUBMIT APPLICATION</button><p style="margin-top:15px;color:#111;font-weight:bold" data-i18n="partner">Partner Countries:</p><div class="flags">🇸🇦 🇦🇪 🇶🇦 🇦🇿 🇷🇺 🇲🇹<small>Saudi Arabia UAE Qatar Azerbaijan Russia Malta</small></div></div>
+<div class="card" id="demand"><h3 data-i18n="demand">Company Demand</h3><p data-i18n="demandSub">Employers - submit your hiring demand</p><label>Company Name</label><input id="cName" placeholder="e.g. GulfTech Contracting LLC"><label>Location</label><input id="cLoc" placeholder="e.g. Dubai, UAE"><label>Required Roles</label><input id="cRoles" placeholder="e.g. Welders, Plumbers - 20 vacancies"><label>Requirements</label><input id="cReq" placeholder="Experience, License, Accommodation details"><button class="submit2" onclick="sendDemand()" data-i18n="submitDemand">SUBMIT DEMAND</button><div class="three"><div class="tag"><b>🛡️ LICENSED & VERIFIED</b><br>Government approved recruitment license.</div><div class="tag"><b>🤝 TRUSTED PARTNER</b><br>1000+ candidates placed across Gulf & Europe.</div><div class="tag"><b>🌍 GLOBAL SUPPORT</b><br>From shortlisting to visa & travel assistance.</div></div></div></div>
+<div class="wrap" style="padding-top:0"><div class="card" id="about"><h3>About Us</h3><p><b>MOHAMMAD FAHIM SHAIKH</b> - Pakistan se Gulf aur Europe ke liye licensed connector. 1000+ candidates placed. Verified jobs, no fraud, no fake visa.</p></div><div class="card" id="services"><h3>Our Services</h3><p>1. Job Placement - 2. Visa Processing - 3. Documentation - 4. Company Demand - 5. Airport to Onboarding Support</p></div><div class="card" id="countries"><h3>Countries</h3><p>Saudi Arabia, UAE, Qatar, Oman, Azerbaijan, Russia, Malta - Workers, Drivers, Electricians, Plumbers, Welders, Nurses, Hotel Staff ki demand hai.</p></div></div>
+<div class="wrap" style="padding-top:0" id="contact"><div class="card"><h3>Contact Us</h3><p><b>Phone / WhatsApp:</b> +92 315 3673539 | <b>Email:</b> contact@mohammadfahimshaikh.com | <b>Address:</b> Karachi, Pakistan | <b>Timing:</b> 9 AM - 9 PM, 7 Days</p></div></div>
+<footer><div><span>© 2024 MOHAMMAD FAHIM SHAIKH — Overseas Employment Connector.</span><span>Email: contact@mohammadfahimshaikh.com | Phone: +92 315 3673539 | Karachi, Pakistan</span></div></footer>
+<script>
+const T={
+en:{heroTitle:"Overseas Employment Connector",heroSub:"Connecting Pakistan Workforce to Gulf & Europe",heroDesc:"Licensed recruitment partner helping skilled and professional Pakistani talent secure verified overseas jobs in the Gulf and Europe. End-to-end support — documentation, visas, placement, and onboarding.",whatsapp:"CHAT ON WHATSAPP",call:"CALL NOW",email:"EMAIL US",apply:"Apply Now",applySub:"Job seekers - apply for overseas opportunities",demand:"Company Demand",demandSub:"Employers - submit your hiring demand",submitApp:"SUBMIT APPLICATION",submitDemand:"SUBMIT DEMAND",partner:"Partner Countries:",lang:"English (UK)"},
+ur:{heroTitle:"اوورسیز ایمپلائمنٹ کنیکٹر",heroSub:"پاکستانی ورک فورس کو خلیج اور یورپ سے جوڑنا",heroDesc:"لائسنس یافتہ بھرتی پارٹنر جو ہنر مند پاکستانیوں کو خلیج اور یورپ میں تصدیق شدہ نوکریاں دلواتا ہے۔ دستاویزات، ویزا، پلیسمنٹ اور آن بورڈنگ تک مکمل مدد۔",whatsapp:"واٹس ایپ پر بات کریں",call:"کال کریں",email:"ای میل کریں",apply:"ابھی اپلائی کریں",applySub:"نوکری چاہنے والے - بیرون ملک مواقع کے لیے اپلائی کریں",demand:"کمپنی ڈیمانڈ",demandSub:"آجر - اپنی بھرتی کی ڈیمانڈ بھیجیں",submitApp:"درخواست جمع کریں",submitDemand:"ڈیمانڈ جمع کریں",partner:"پارٹنر ممالک:",lang:"Urdu"},
+ar:{heroTitle:"موصل التوظيف الخارجي",heroSub:"ربط القوى العاملة الباكستانية بالخليج وأوروبا",heroDesc:"شريك توظيف مرخص يساعد المواهب الباكستانية الماهرة على تأمين وظائف خارجية موثقة في الخليج وأوروبا. دعم كامل - وثائق، تأشيرات، توظيف، ومتابعة.",whatsapp:"محادثة واتساب",call:"اتصل الآن",email:"راسلنا",apply:"قدم الآن",applySub:"الباحثون عن عمل - قدموا للفرص الخارجية",demand:"طلب الشركة",demandSub:"أصحاب العمل - أرسلوا طلب التوظيف",submitApp:"إرسال الطلب",submitDemand:"إرسال الطلب",partner:"الدول الشريكة:",lang:"Arabic"},
+ru:{heroTitle:"Коннектор зарубежного трудоустройства",heroSub:"Связываем рабочую силу Пакистана со странами Персидского залива и Европой",heroDesc:"Лицензированный партнер по подбору персонала, помогающий квалифицированным пакистанским специалистам получить проверенные вакансии за рубежом в странах Персидского залива и Европе. Полная поддержка — документы, визы, трудоустройство.",whatsapp:"ЧАТ В WHATSAPP",call:"ПОЗВОНИТЬ",email:"НАПИСАТЬ",apply:"Подать заявку",applySub:"Соискатели - подайте заявку на зарубежные вакансии",demand:"Запрос компании",demandSub:"Работодатели - отправьте запрос на найм",submitApp:"ОТПРАВИТЬ ЗАЯВКУ",submitDemand:"ОТПРАВИТЬ ЗАПРОС",partner:"Страны-партнеры:",lang:"Russian"}
+};
+function setLang(l){document.querySelectorAll('[data-i18n]').forEach(el=>{let k=el.getAttribute('data-i18n'); if(T[l][k]) el.innerText=T[l][k];});document.getElementById('langLabel').innerText=T[l].lang;document.getElementById('body').classList.toggle('rtl', l==='ur'||l==='ar');document.getElementById('aiMsg').innerText = l==='ur' ? 'السلام علیکم! میں آپ کو اپلائی کرنے یا کمپنی ڈیمانڈ بھیجنے میں مدد کر سکتا ہوں۔ نوکری، دستاویزات یا ویزا کے بارے میں پوچھیں۔' : l==='ar' ? 'مرحباً! يمكنني مساعدتك في التقديم أو إرسال طلب شركة. اسألني عن الوظائف أو المستندات أو التأشيرات.' : l==='ru' ? 'Привет! Я могу помочь подать заявку или отправить запрос компании. Спросите о вакансиях, документах или визах.' : 'Hi! I can help you apply or list a company demand. Ask me about jobs, documents, or process.';}
+function askAI(){let v=document.getElementById('aiInput').value.toLowerCase();let m=document.getElementById('aiMsg');if(v.includes('visa')||v.includes('ویزا')||v.includes('виза')) m.innerText='Visa ke liye Passport, Photo, Medical aur Police Clearance chahiye. WhatsApp par rabta karein, hum guide karenge.';else if(v.includes('job')||v.includes('نوکری')||v.includes('работа')) m.innerText='Gulf me Drivers, Electricians, Welders, Plumbers, Nurses ki demand hai. Apply Now form bharein.';else if(v.includes('fee')||v.includes('فیس')||v.includes('цена')) m.innerText='Fees kaam aur country par depend karti hai. WhatsApp par apna skill batayein, hum exact batayenge.';else m.innerText='Shukriya! Apna naam, skill aur country Apply Now form me likhein ya WhatsApp par bhejein. Hum jald rabta karenge.';}
+function sendApply(){let msg="NEW APPLICATION%0AName: "+document.getElementById('aName').value+"%0APhone: "+document.getElementById('aPhone').value+"%0ACountry: "+document.getElementById('aCountry').value+"%0ASkill: "+document.getElementById('aSkill').value+"%0AExp: "+document.getElementById('aExp').value;window.open("https://wa.me/923153673539?text="+msg,"_blank");}
+function sendDemand(){let msg="NEW COMPANY DEMAND%0ACompany: "+document.getElementById('cName').value+"%0ALocation: "+document.getElementById('cLoc').value+"%0ARoles: "+document.getElementById('cRoles').value+"%0AReq: "+document.getElementById('cReq').value;window.open("https://wa.me/923153673539?text="+msg,"_blank");}
+</script>
+</body>
+</html>
