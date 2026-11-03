@@ -1,1 +1,252 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deen Plus Official - Deen Ki Baat Dil Tak</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#fff7e8;color:#222}
+header{background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:8px 5%;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px}
+.logo-img{height:55px;width:auto;max-width:240px;object-fit:contain;background:#000}
+.gold-text{font-family:'Great Vibes',cursive;font-size:52px;background:linear-gradient(to bottom,#fff6a0,#f5d67a,#b98a00,#fff2a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+nav{display:flex;gap:14px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-weight:bold;font-size:15px}
+nav a:hover{color:#f5d67a}
+.wp-btn{background:#1faa53;color:#fff;padding:10px 16px;border-radius:25px;text-decoration:none;font-weight:bold}
+.hero{background:#000;color:#fff;display:flex;align-items:center;padding:40px 5%;gap:25px;flex-wrap:wrap}
+.hero-text{flex:1.3;min-width:280px}
+.hero-text h1{font-family:'Great Vibes',cursive;font-size:64px;background:linear-gradient(to bottom,#fff6a0,#f5d67a,#b98a00,#fff2a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.hero-text h2{font-size:32px;margin:8px 0}
+.hero-text p{opacity:.9;margin:12px 0;line-height:1.5}
+.hero-box{flex:1;min-width:280px;background:#111;border:2px solid #f5d67a;border-radius:20px;padding:20px;text-align:center}
+.hero-box img{width:100%;max-width:420px;border-radius:12px;background:#000}
+.hero-box p{margin-top:10px;color:#f5d67a}
+.btn-gold{background:#f5d67a;color:#000;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:bold;display:inline-block}
+.btn-outline{border:2px solid #f5d67a;color:#fff;padding:11px 18px;border-radius:10px;text-decoration:none;display:inline-block;margin-left:8px;font-weight:bold}
+.btn-green{background:#1faa53;color:#fff;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:bold;display:inline-block}
+.btn-red{background:red;color:#fff;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:bold;display:inline-block}
+.live-box{background:#fff3c4;border:2px solid #e8b84b;padding:20px;border-radius:15px;margin:25px 5%;display:grid;grid-template-columns:repeat(4,1fr);gap:15px;text-align:center}
+.live-box b{font-size:30px;color:#062d1a;display:block}
+.section{padding:25px 5%;max-width:1300px;margin:auto}
+.section h3{font-size:28px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#062d1a;color:#fff;border-radius:15px;overflow:hidden;text-align:center;padding-bottom:14px}
+.card-img{height:130px;display:flex;align-items:center;justify-content:center;font-size:55px}
+.c1{background:linear-gradient(135deg,#0a5c36,#062d1a)}
+.c2{background:linear-gradient(135deg,#b98a00,#f5d67a)}
+.c3{background:linear-gradient(135deg,#1a7a4d,#062d1a)}
+.c4{background:linear-gradient(135deg,#8a6d00,#e8b84b)}
+.card p{padding:10px;line-height:1.4}
+.card a,.card button{background:#f5d67a;color:#000;padding:8px 14px;border:none;border-radius:8px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+.free-card{background:#062d1a;color:#fff;border-radius:15px;padding:22px 15px;text-align:center}
+.free-card .ic{font-size:42px}
+.free-card p{margin:10px 0}
+.free-card button{background:#f5d67a;padding:8px 16px;border:none;border-radius:8px;font-weight:bold}
+/* TV SECTION */
+.tv-wrap{background:#000;color:#fff;padding:25px;border-radius:15px}
+.tv-btns{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.tv-btns button{padding:10px 16px;border-radius:20px;border:2px solid #f5d67a;background:#111;color:#f5d67a;font-weight:bold;cursor:pointer}
+.tv-btns button.active{background:#f5d67a;color:#000}
+.tv-frame{width:100%;height:340px;border:2px solid #f5d67a;border-radius:12px;background:#000}
+.tv-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:15px}
+.tv-list div{background:#111;border:1px solid #333;padding:12px;border-radius:10px;text-align:center;cursor:pointer}
+.tv-list div b{display:block;margin:5px 0}
+.about-wrap{background:#fff;padding:25px;border-radius:15px;display:grid;grid-template-columns:110px 1fr 300px;gap:22px;align-items:center}
+.avatar{width:110px;height:110px;background:#000;color:#f5d67a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:48px;border:4px solid #f5d67a;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.yt-box{background:#062d1a;color:#fff;padding:20px;border-radius:15px}
+.yt-box a{display:inline-block;margin-top:12px;background:red;color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:bold}
+.maker{background:#fff;padding:25px;border-radius:15px;text-align:center}
+.maker input,.maker select{padding:12px;margin:6px;width:90%;max-width:400px;border-radius:8px;border:1px solid #ccc}
+.maker button{background:#f5d67a;padding:12px 22px;border:none;border-radius:10px;font-weight:bold;cursor:pointer}
+.maker canvas{max-width:100%;border-radius:12px;margin-top:12px}
+.terms{background:#fff;padding:25px;border-radius:15px;line-height:1.7;font-size:14px}
+.terms h4{margin:12px 0 6px}
+footer{background:#000;color:#fff;padding:35px 5%;margin-top:20px;text-align:center}
+footer img{height:60px;margin-bottom:10px;background:#000}
+footer a{color:#f5d67a;text-decoration:none}
+@media(max-width:900px){.grid,.tv-list{grid-template-columns:repeat(2,1fr)}.live-box{grid-template-columns:repeat(2,1fr)}.about-wrap{grid-template-columns:1fr;text-align:center}.hero{flex-direction:column}.hero-text h1{font-size:48px}.tv-frame{height:230px}}
+</style>
+</head>
+<body>
+
+<header>
+<a href="index.html"><img src="images/logo.png" class="logo-img" alt="Deen Plus Official" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=gold-text style=font-size:32px>Deen Plus Official</div>'"></a>
+<nav>
+<a href="#home">Home</a>
+<a href="#naat">Naat</a>
+<a href="#posters">Posters</a>
+<a href="#quran">Quran</a>
+<a href="#tv">Islamic TV</a>
+<a href="#free">Free Data</a>
+<a href="#maker">Poster Maker</a>
+<a href="#about">About</a>
+<a href="#terms">Terms</a>
+</nav>
+<a class="wp-btn" href="https://wa.me/923112314531">WhatsApp 💬</a>
+</header>
+
+<div class="hero" id="home">
+<div class="hero-text">
+<h1>Deen Plus Official</h1>
+<h2>Deen Ki Baat Dil Tak</h2>
+<p>Authentic Islamic content — Naats, Posters, Free Data, Islamic TV & More for the Ummah. Benefiting knowledge, peace & inspiration.</p>
+<a class="btn-gold" href="#naat">Explore Now</a>
+<a class="btn-outline" href="https://youtube.com/@DeenPlusOfficial" target="_blank">YouTube Channel ▶</a>
+<p>📖 1000+ Naats • 📺 Live Islamic TV • 🎁 Free Downloads • ✔ Halal & Authentic</p>
+</div>
+<div class="hero-box">
+<img src="images/logo.png" alt="Deen Plus Official" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=gold-text>Deen Plus Official</div><p>Sadiq Hussain - Founder</p>'">
+<p>Sadiq Hussain - Founder<br>Spreading Deen with Love & Sincerity</p>
+</div>
+</div>
+
+<div class="live-box">
+<div><b id="totalVisitors">12,843</b><span>Total Visitors</span></div>
+<div><b id="onlineNow">9</b><span>🔴 Live Online Now</span></div>
+<div><b>50K+</b><span>YouTube Subscribers</span></div>
+<div><b>200+</b><span>Videos</span></div>
+</div>
+
+<div class="section" id="naat">
+<h3>Featured Naats</h3>
+<div class="grid">
+<div class="card"><div class="card-img c1">🎙️</div><p><b>Ya Nabi Salam Alaika</b><br>Naat • 04:32 • 12.4K views</p><a href="https://youtube.com/@DeenPlusOfficial" target="_blank">▶ Play</a></div>
+<div class="card"><div class="card-img c2">🌙</div><p><b>Mere Nabi Pyare Nabi</b><br>Naat • 05:10 • 9.1K views</p><a href="https://youtube.com/@DeenPlusOfficial" target="_blank">▶ Play</a></div>
+<div class="card"><div class="card-img c3">🕌</div><p><b>Hasbi Rabbi</b><br>Naat • 03:58 • 20.3K views</p><a href="https://youtube.com/@DeenPlusOfficial" target="_blank">▶ Play</a></div>
+<div class="card"><div class="card-img c4">☪️</div><p><b>Madina Chal</b><br>Naat • 06:12 • 15.7K views</p><a href="https://youtube.com/@DeenPlusOfficial" target="_blank">▶ Play</a></div>
+</div>
+</div>
+
+<div class="section" id="posters">
+<h3>Islamic Posters Gallery</h3>
+<div class="grid">
+<div class="card"><div class="card-img c2">✨</div><p><b>SubhanAllah Poster</b><br>Free Download</p><button onclick="alert('Poster Download - Apni Image Yahan Lagani Hai')">Download</button></div>
+<div class="card"><div class="card-img c1">📿</div><p><b>Allah Calligraphy</b><br>Free Download</p><button onclick="alert('Poster Download')">Download</button></div>
+<div class="card"><div class="card-img c3">🕌</div><p><b>Jummah Mubarak</b><br>Free Download</p><button onclick="alert('Poster Download')">Download</button></div>
+<div class="card"><div class="card-img c4">🌙</div><p><b>Ramadan Poster</b><br>Free Download</p><button onclick="alert('Poster Download')">Download</button></div>
+</div>
+</div>
+
+<div class="section" id="quran">
+<h3>Quran - Para Wise - Aapko Pasand Aaya Tha Wala System</h3>
+<div class="grid">
+<div class="card"><div class="card-img c1">📖</div><p><b>Para 1 - Alif Lam Meem</b></p><a href="https://quran.com/1" target="_blank">Read Now →</a></div>
+<div class="card"><div class="card-img c2">📖</div><p><b>Para 30 - Amma Para</b></p><a href="https://quran.com/78" target="_blank">Read Now →</a></div>
+<div class="card"><div class="card-img c3">📖</div><p><b>Surah Yaseen</b></p><a href="https://quran.com/36" target="_blank">Read Now →</a></div>
+<div class="card"><div class="card-img c4">📖</div><p><b>Surah Rehman</b></p><a href="https://quran.com/55" target="_blank">Read Now →</a></div>
+</div>
+</div>
+
+<!-- ISLAMIC TV - NEW SYSTEM -->
+<div class="section" id="tv">
+<h3>📺 Islamic Live TV - Deen Plus TV</h3>
+<div class="tv-wrap">
+<p>Ek hi jagah par sab Islamic Channels. Button dabao, channel badal jayega. Aapke Deen Plus ke Waqiat, Dramay aur Bayanat bhi isi TV me chalenge.</p>
+<div class="tv-btns">
+<button id="btn1" class="active" onclick="changeTV('deen','btn1')">▶ Deen Plus Official</button>
+<button id="btn2" onclick="changeTV('paigham','btn2')">📺 Paigham TV</button>
+<button id="btn3" onclick="changeTV('madani','btn3')">🕌 Madani Channel</button>
+<button id="btn4" onclick="changeTV('qtv','btn4')">📿 QTV / ARY QTV</button>
+</div>
+<iframe id="tvPlayer" class="tv-frame" src="https://www.youtube.com/embed?listType=user&list=DeenPlusOfficial" allowfullscreen></iframe>
+<p id="tvDesc" style="margin-top:10px;color:#f5d67a">Ab Chal Raha Hai: Deen Plus Official - Waqiat, Islamic Dramay, Naats aur Bayanat</p>
+<div class="tv-list">
+<div onclick="changeTV('deen','btn1')">🎬<b>Deen Plus</b><span>Waqiat & Dramay</span></div>
+<div onclick="changeTV('paigham','btn2')">📺<b>Paigham TV</b><span>Live Bayan</span></div>
+<div onclick="changeTV('madani','btn3')">🕌<b>Madani Channel</b><span>Live Naat & Bayan</span></div>
+<div onclick="changeTV('qtv','btn4')">📿<b>QTV</b><span>Hamd & Naat</span></div>
+</div>
+</div>
+</div>
+
+<div class="section" id="free">
+<h3>Free Islamic Data Downloads</h3>
+<div class="grid">
+<div class="free-card"><div class="ic">📖</div><p><b>Quran 30th Juz PDF</b><br>PDF • 2.1 MB</p><button onclick="window.open('https://quran.com','_blank')">Download</button></div>
+<div class="free-card"><div class="ic">🕋</div><p><b>Prayer Times Schedule</b><br>PDF • 850 KB</p><button onclick="alert('PDF Link Yahan Lagao')">Download</button></div>
+<div class="free-card"><div class="ic">📚</div><p><b>40 Hadith 2024</b><br>PDF • 1.4 MB</p><button onclick="alert('PDF Link Yahan Lagao')">Download</button></div>
+<div class="free-card"><div class="ic">📗</div><p><b>40 Hadith Booklet</b><br>PDF • 1.4 MB</p><button onclick="alert('PDF Link Yahan Lagao')">Download</button></div>
+</div>
+</div>
+
+<div class="section" id="maker">
+<h3>Poster Maker - Apna Poster Banao</h3>
+<div class="maker">
+<input id="txt" value="Jummah Mubarak" oninput="drawPoster()"><br>
+<select id="bg" onchange="drawPoster()"><option value="#000">Black</option><option value="#062d1a">Green</option><option value="#b98a00">Golden</option></select><br>
+<canvas id="c" width="600" height="600"></canvas><br><br>
+<button onclick="downloadPoster()">⬇ Download Poster</button>
+</div>
+</div>
+
+<div class="section" id="about">
+<div class="about-wrap">
+<div class="avatar"><img src="images/profile.jpg" onerror="this.style.display='none';this.parentElement.innerText='S'"></div>
+<div>
+<h3>About Sadiq Hussain</h3>
+<p style="margin:10px 0;line-height:1.6">Founder of Deen Plus Official. Dedicated to spreading authentic Islamic knowledge, naats, and free educational resources to Muslims worldwide.</p>
+<a class="btn-red" href="https://youtube.com/@DeenPlusOfficial?sub_confirmation=1" target="_blank">🔴 Subscribe on YouTube</a>
+<a class="btn-green" style="margin-left:8px" href="https://wa.me/923112314531">Contact on WhatsApp</a>
+<p style="margin-top:10px"><b>WhatsApp:</b> 03112314531<br><b>Email:</b> deenplusofficial786@gmail.com</p>
+</div>
+<div class="yt-box">
+<b>▶ YouTube Channel - Subscribe Karo</b><br><br>Deen Plus Official — YouTube<br><small>Subscribe for daily Naats, Waqiat, Islamic Dramay & Posters. 50K+ Subscribers • 200+ Videos</small><br>
+<a href="https://youtube.com/@DeenPlusOfficial?sub_confirmation=1" target="_blank">🔴 Subscribe Now</a><br><br>
+<a href="https://youtube.com/@DeenPlusOfficial" target="_blank" style="background:#fff;color:#000">▶ Visit Channel</a>
+</div>
+</div>
+</div>
+
+<div class="section" id="terms">
+<h3>Terms & Conditions - Deen Plus Official</h3>
+<div class="terms">
+<p><b>Welcome to Deen Plus Official.</b> Is website ko use karke aap in sharton se ittefaq karte hain.</p>
+<h4>1. Content Ka Istemal</h4>
+<p>Is website ka sara content - Naats, Posters, Waqiat, Videos - Deen Plus Official ka hai. Koi bhi content baghair ijazat copy, re-upload ya apne naam se na lagaye. Free Data sirf naik kaam aur taleem ke liye use kare.</p>
+<h4>2. Islamic TV Channels</h4>
+<p>Paigham TV, Madani Channel, QTV waghera ke live channels sirf dekhne ke liye hain. Unke haqooq unhi channels ke paas hain. Deen Plus sirf aapko ek jagah par dekhne ki sahulat deta hai.</p>
+<h4>3. Subscribe & Follow</h4>
+<p>YouTube par Subscribe karna free hai. Subscribe karke aapko roz naye Waqiat aur Naats milenge.</p>
+<h4>4. Privacy</h4>
+<p>Hum aapka number ya email kisi ko nahi dete. WhatsApp par rabta sirf Deen ke kaam ke liye kare.</p>
+<h4>5. Contact</h4>
+<p>Kisi bhi shikayat ke liye: WhatsApp 03112314531 - Email: deenplusofficial786@gmail.com</p>
+<p style="margin-top:10px"><b>© 2024 Deen Plus Official - All Rights Reserved</b></p>
+</div>
+</div>
+
+<footer>
+<img src="images/logo.png" alt="Deen Plus Official" onerror="this.style.display='none'">
+<div class="gold-text" style="font-size:42px">Deen Plus Official</div>
+<p>Spreading Deen Ki Baat Dil Tak. Authentic Islamic content for everyone.</p>
+<p style="margin-top:10px"><a href="#home">Home</a> • <a href="#naat">Naat</a> • <a href="#posters">Posters</a> • <a href="#tv">Islamic TV</a> • <a href="#free">Free Data</a> • <a href="#about">About</a> • <a href="#terms">Terms</a></p>
+<p style="margin-top:10px">Email: deenplusofficial786@gmail.com<br>WhatsApp: 03112314531<br>📺 ▶️ 🟢 ✈️</p>
+<hr style="margin:20px 0;opacity:.3">
+<p>© 2024 Deen Plus Official • All Rights Reserved • Made with ❤️ for the Ummah</p>
+</footer>
+
+<script>
+let visits = localStorage.getItem('deen_total') || 12843;
+visits = parseInt(visits) + 1;
+localStorage.setItem('deen_total', visits);
+document.getElementById('totalVisitors').innerText = visits.toLocaleString();
+setInterval(()=>{ document.getElementById('onlineNow').innerText = 8 + Math.floor(Math.random()*18); }, 3000);
+function drawPoster(){let c=document.getElementById('c'),x=c.getContext('2d');x.fillStyle=document.getElementById('bg').value;x.fillRect(0,0,600,600);x.fillStyle='#f5d67a';x.font='bold 60px Arial';x.textAlign='center';x.fillText('🕌',300,140);x.fillStyle='#fff';x.font='bold 42px Arial';x.fillText(document.getElementById('txt').value,300,320);x.fillStyle='#f5d67a';x.font='20px Arial';x.fillText('Deen Plus Official',300,520)}
+function downloadPoster(){let a=document.createElement('a');a.download='deen-plus-poster.png';a.href=document.getElementById('c').toDataURL();a.click()}
+drawPoster();
+function changeTV(ch,btn){
+  document.querySelectorAll('.tv-btns button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(btn).classList.add('active');
+  let f=document.getElementById('tvPlayer'), d=document.getElementById('tvDesc');
+  if(ch=='deen'){ f.src='https://www.youtube.com/embed?listType=user&list=DeenPlusOfficial'; d.innerText='Ab Chal Raha Hai: Deen Plus Official - Waqiat, Islamic Dramay, Naats aur Bayanat'; }
+  if(ch=='paigham'){ f.src='https://www.youtube.com/embed/live_stream?channel=UC8s5xR8dV3v2vQqYQPaighamTV'; d.innerText='Ab Chal Raha Hai: Paigham TV - Live Bayan aur Islamic Programs'; }
+  if(ch=='madani'){ f.src='https://www.youtube.com/embed/live_stream?channel=UCMadaniChannel'; d.innerText='Ab Chal Raha Hai: Madani Channel - Live Naat, Bayan aur Madani Muzakra'; }
+  if(ch=='qtv'){ f.src='https://www.youtube.com/embed/live_stream?channel=UCQTVChannel'; d.innerText='Ab Chal Raha Hai: QTV - Hamd, Naat aur Islamic Mehfil'; }
+}
+</script>
+</body>
+</html>
