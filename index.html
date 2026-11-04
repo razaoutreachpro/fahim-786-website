@@ -1,1 +1,152 @@
 
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deen Plus - مکمل اسلامی مارکیٹ</title>
+<style>
+:root{--gold:#e9c67b;--bg:#061a14;--bg2:#0a2e26;--card:#143d31;--card2:#1a4a3b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#fff;font-family:system-ui;padding-bottom:110px}
+header{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:2px solid #e9c67b40;padding:10px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.logo{width:58px;height:58px;border-radius:50%;border:3px solid var(--gold);object-fit:cover;background:#000}
+.search{flex:1;display:flex;gap:6px;background:var(--bg2);border:1.5px solid var(--gold);border-radius:30px;padding:8px 14px}
+.search input{flex:1;background:transparent;border:none;outline:none;color:#fff}
+.tabs{display:flex;gap:8px;overflow:auto;padding:10px;background:var(--bg2);position:sticky;top:78px;z-index:150;white-space:nowrap}
+.tabs b{padding:8px 16px;border:1.5px solid var(--gold);border-radius:22px;cursor:pointer;font-size:13px;opacity:.6}
+.tabs b.active{background:var(--gold);color:var(--bg);opacity:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px;padding:12px}
+.card{background:var(--card);border:1px solid #e9c67b40;border-radius:14px;overflow:hidden;cursor:pointer;text-align:center}
+.card img{width:100%;height:110px;object-fit:cover;background:#000}
+.card b{color:var(--gold);font-size:13px;display:block;padding:6px 4px 0}
+.card small{font-size:11px;opacity:.6}
+.card .playbar{display:flex;justify-content:space-around;background:#000;padding:6px}
+.maker{border:2px solid var(--gold);border-radius:16px;padding:12px;margin:12px;background:var(--bg2);display:none}
+canvas{width:100%;max-width:400px;height:400px;background:#fff;border-radius:12px;display:block;margin:10px auto}
+input,select,button{padding:10px;border-radius:8px;border:1px solid var(--gold);margin:4px}
+button{background:var(--gold);color:var(--bg);font-weight:bold;cursor:pointer}
+#mp3Bar{position:fixed;bottom:0;left:0;right:0;background:#000;border-top:2px solid var(--gold);padding:8px 10px;display:flex;gap:8px;align-items:center;z-index:999}
+#mp3Bar audio{flex:1}
+#wa{position:fixed;bottom:90px;right:12px;background:#25D366;color:#fff;width:52px;height:52px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:28px;text-decoration:none;z-index:999;border:2px solid #fff}
+.quran-reader{padding:12px;background:var(--card2);border:2px solid var(--gold);border-radius:16px;margin:12px;display:none}
+.quran-reader p{line-height:2;font-size:18px}
+footer{padding:18px;text-align:center;border-top:1px solid #e9c67b30;color:var(--gold);font-size:11px}
+footer a{color:var(--gold);margin:0 6px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="top">
+<div style="display:flex;gap:8px;align-items:center">
+<img class="logo" src="logo.png" onerror="this.src='https://img.youtube.com/vi/33NKK8XChi0/hqdefault.jpg'">
+<div><b style="color:var(--gold);font-size:18px">Deen Plus</b><br><small style="font-size:10px">ہر چیز کی سہولت - مکمل مارکیٹ</small></div>
+</div>
+<div class="search">🔍<input id="q" oninput="render()" placeholder="پورے بازار میں تلاش..."></div>
+</div>
+</header>
+
+<div class="tabs">
+<b id="t-all" class="active" onclick="setCat('all')">All Market</b>
+<b id="t-quran" onclick="setCat('quran')">قرآن MP3 + پڑھنا</b>
+<b id="t-quranS" onclick="setCat('quranS')">چھوٹی سورتیں</b>
+<b id="t-quranL" onclick="setCat('quranL')">بڑی سورتیں</b>
+<b id="t-naat" onclick="setCat('naat')">نعت حمد قوالی</b>
+<b id="t-video" onclick="setCat('video')">ویڈیو کلپس</b>
+<b id="t-poster" onclick="setCat('poster')">پوسٹرز</b>
+<b id="t-template" onclick="setCat('template')">ٹیمپلیٹس</b>
+<b id="t-maker" onclick="setCat('maker')">پوسٹر میکر</b>
+<b id="t-lab" onclick="setCat('lab')">فوٹو لیب</b>
+<b id="t-hadees" onclick="setCat('hadees')">حدیث و دعا</b>
+</div>
+
+<div id="quranRead" class="quran-reader">
+<h3 style="color:var(--gold)">📖 قرآن - سننے کے ساتھ پڑھنا</h3>
+<p id="arabic">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+<p id="urdu" style="color:var(--gold)">شروع اللہ کے نام سے جو بڑا مہربان نہایت رحم والا ہے</p>
+<p id="english" style="opacity:.7;font-size:14px">In the name of Allah, the Most Gracious, the Most Merciful</p>
+<button onclick="playMP3('سورۃ الرحمن','https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3')">▶ تلاوت سنیں</button>
+</div>
+
+<div id="market" class="grid"></div>
+
+<div id="sec-maker" class="maker">
+<h3 style="color:var(--gold)">🎨 پوسٹر میکر</h3>
+<input id="pText" placeholder="جمعہ مبارک لکھیں" style="width:75%"><button onclick="makePoster()">بنائیں</button>
+<canvas id="can" width="600" height="600"></canvas>
+<button onclick="downloadPoster()">ڈاؤن لوڈ</button>
+</div>
+
+<div id="sec-lab" class="maker">
+<h3 style="color:var(--gold)">📸 فوٹو لیب</h3>
+<input type="file" accept="image/*" onchange="loadLab(event)"><select id="frame"><option>سنہری بارڈر</option><option>بسم اللہ فریم</option></select>
+<canvas id="can2" width="600" height="600"></canvas>
+<button onclick="downloadLab()">فوٹو ڈاؤن لوڈ</button>
+</div>
+
+<a id="wa" href="https://wa.me/923112314531" target="_blank">W</a>
+
+<div id="mp3Bar"><b id="now" style="color:var(--gold);font-size:11px;min-width:70px">MP3 Player</b><audio id="aud" controls></audio><span id="t2" style="font-size:11px">0:00</span></div>
+
+<footer>
+<a href="#about">About</a> | <a href="#contact">Contact</a> | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms</a><br><br>
+© Deen Plus - 0311-2314531 - deenplusofficial@gmail.com<br>
+ID: 33NKK8XChi0 - https://youtube.com/shorts/33NKK8XChi0
+</footer>
+
+<script>
+const YT_THUMB='https://img.youtube.com/vi/33NKK8XChi0/hqdefault.jpg';
+const allData=[
+{cat:'quranS',title:'سورۃ الاخلاص MP3',file:'quran/ikhlas.mp3',demo:'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',thumb:YT_THUMB},
+{cat:'quranS',title:'سورۃ الفلق MP3',file:'quran/falaq.mp3',demo:'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',thumb:YT_THUMB},
+{cat:'quranL',title:'سورۃ الرحمن MP3',file:'quran/rahman.mp3',demo:'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',thumb:YT_THUMB},
+{cat:'quranL',title:'سورۃ یٰسین MP3',file:'quran/yaseen.mp3',demo:'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',thumb:YT_THUMB},
+{cat:'naat',title:'نعت شریف - مصطفی جان رحمت',file:'naats/naat1.mp3',demo:'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',thumb:YT_THUMB},
+{cat:'naat',title:'حمد باری تعالی',file:'naats/hamd1.mp3',demo:'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3',thumb:YT_THUMB},
+{cat:'video',title:'Makkah Live - آپ کا شارٹ',file:'33NKK8XChi0',thumb:YT_THUMB},
+{cat:'video',title:'Madina Live Clip',file:'33NKK8XChi0',thumb:YT_THUMB},
+{cat:'poster',title:'جمعہ مبارک پوسٹر',thumb:YT_THUMB},
+{cat:'template',title:'تھمب نیل ٹیمپلیٹ',thumb:YT_THUMB},
+{cat:'hadees',title:'روز کی حدیث - نیت',thumb:YT_THUMB,text:'انما الاعمال بالنیات'},
+{cat:'hadees',title:'مسنون دعا - صبح شام',thumb:YT_THUMB,text:'اللهم اني اسالك علما نافعا'},
+];
+let cur='all';
+function setCat(c){
+cur=c;
+document.querySelectorAll('.tabs b').forEach(b=>b.classList.remove('active'));
+let el=document.getElementById('t-'+c); if(el) el.classList.add('active');
+document.getElementById('sec-maker').style.display=c==='maker'?'block':'none';
+document.getElementById('sec-lab').style.display=c==='lab'?'block':'none';
+document.getElementById('quranRead').style.display=c==='quran'?'block':'none';
+render();
+}
+function render(){
+let m=document.getElementById('market'); m.innerHTML='';
+let q=document.getElementById('q').value.toLowerCase();
+allData.forEach(v=>{
+ if((cur==='all' || v.cat===cur || (cur==='quran' && v.cat.startsWith('quran'))) && v.title.toLowerCase().includes(q)){
+   if(cur==='maker' || cur==='lab') return;
+   if(v.cat==='poster' || v.cat==='template' || v.cat==='hadees'){
+     m.innerHTML+=`<div class="card" onclick="useTemplate('${v.title}')"><img src="${v.thumb}" onerror="this.src='${YT_THUMB}'"><b>${v.title}</b><small>${v.text||v.cat}</small></div>`;
+   } else if(v.cat==='video'){
+     m.innerHTML+=`<div class="card" onclick="playVideo('${v.title}','${v.file}')"><img src="${v.thumb}"><b>${v.title}</b><div class="playbar">▶ ویڈیو</div></div>`;
+   } else {
+     m.innerHTML+=`<div class="card"><img src="${v.thumb}" onerror="this.src='${YT_THUMB}'"><b>${v.title}</b><small>${v.cat}</small><div class="playbar"><span onclick="playMP3('${v.title}','${v.demo}')">▶</span><span onclick="playMP3('${v.title}','${v.file}')">📁 اپنا MP3</span></div></div>`;
+   }
+ }
+});
+if(m.innerHTML==='') m.innerHTML='<p style="padding:20px">کچھ نہیں ملا، دوسرا لفظ لکھیں</p>';
+}
+function playMP3(t,f){document.getElementById('now').innerText=t;let a=document.getElementById('aud');a.src=f;a.play();}
+function playVideo(t,id){window.open('https://youtube.com/shorts/'+id,'_blank');}
+function useTemplate(t){setCat('maker');document.getElementById('pText').value=t;makePoster();}
+function makePoster(){let c=document.getElementById('can');let ctx=c.getContext('2d');ctx.fillStyle='#061a14';ctx.fillRect(0,0,600,600);ctx.strokeStyle='#e9c67b';ctx.lineWidth=12;ctx.strokeRect(15,15,570,570);ctx.fillStyle='#e9c67b';ctx.font='bold 36px system-ui';ctx.textAlign='center';ctx.fillText(document.getElementById('pText').value||'Deen Plus',300,300);ctx.font='18px system-ui';ctx.fillText('0311-2314531 | Deen Plus',300,550);}
+function downloadPoster(){let c=document.getElementById('can');let a=document.createElement('a');a.download='deenplus.png';a.href=c.toDataURL();a.click();}
+let labImg=null;function loadLab(e){let r=new FileReader();r.onload=function(ev){labImg=new Image();labImg.onload=drawLab;labImg.src=ev.target.result;};r.readAsDataURL(e.target.files[0]);}
+function drawLab(){let c=document.getElementById('can2');let ctx=c.getContext('2d');ctx.clearRect(0,0,600,600);ctx.drawImage(labImg,0,0,600,600);ctx.strokeStyle='#e9c67b';ctx.lineWidth=18;ctx.strokeRect(0,0,600,600);ctx.fillStyle='#e9c67b';ctx.font='bold 20px system-ui';ctx.fillText('Deen Plus - '+document.getElementById('frame').value,20,580);}
+function downloadLab(){let c=document.getElementById('can2');let a=document.createElement('a');a.download='deenplus-lab.png';a.href=c.toDataURL();a.click();}
+render();makePoster();
+</script>
+</body>
+</html>
